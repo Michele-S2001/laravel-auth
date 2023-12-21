@@ -4,7 +4,7 @@
 
 @section('content')
 
-<div class="section project-showcase py-5">
+<section class="section project-showcase py-5">
     <div class="container">
         <div class="row">
             <div class="col-6">
@@ -16,6 +16,6 @@
             </div>
         </div>
     </div>
-</div>
+</section>
 
 @endsection

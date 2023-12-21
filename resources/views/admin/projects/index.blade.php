@@ -4,7 +4,7 @@
 
 @section('content')
 
-<div class="section projects py-5">
+<section class="section projects py-5">
     <div class="container">
         <h1 class="main-title text-center mb-5">Discover the projects that I made</h1>
         <div class="row row-gap-3">
@@ -26,6 +26,6 @@
             @endforeach
         </div>
     </div>
-</div>
+</section>
 
 @endsection
