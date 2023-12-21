@@ -39,7 +39,6 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{route('admin.projects.create')}}">{{ __('Add project') }}</a>
                         </li>
-                        @else
                         @endauth
                     </ul>
 

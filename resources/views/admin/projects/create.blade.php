@@ -8,19 +8,19 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-8">
-                <form action="" method="POST">
-
+                <form action="{{route('admin.projects.store')}}" method="POST">
+                    @csrf
                     <div class="mb-3">
                         <label for="title" class="form-label">Title</label>
-                        <input type="text" class="form-control" id="title" placeholder="Title of the project">
+                        <input type="text" class="form-control" id="title" placeholder="Title of the project" value="{{old('title')}}">
                     </div>
                     <div class="mb-3">
                         <label for="image" class="form-label">URL image</label>
-                        <input type="text" class="form-control" id="image" placeholder="URL of the project image">
+                        <input type="text" class="form-control" id="image" placeholder="URL of the project image" value="{{old('image')}}">
                     </div>
                     <div class="mb-3">
                         <label for="description" class="form-label">Description</label>
-                        <textarea placeholder="Description of the project" class="form-control" id="description" rows="3"></textarea>
+                        <textarea placeholder="Description of the project" class="form-control" id="description" rows="3">{{old('description')}}</textarea>
                     </div>
                     <div class="mb-3 d-flex justify-content-between">
                         <input class="btn btn-primary" type="submit" value="Add">
