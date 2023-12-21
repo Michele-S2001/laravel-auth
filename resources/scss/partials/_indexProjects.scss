@@ -1,0 +1,18 @@
+.section.projects {
+
+    .project-card {
+        background-color: $grey;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        &__header {
+
+            & .title {
+                font-size: 1.3rem;
+            }
+        }
+    }
+
+}

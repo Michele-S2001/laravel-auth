@@ -8,12 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
-
-    <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <title>@yield('page-title')</title>
 
     <!-- Usando Vite -->
     @vite(['resources/js/app.js'])
@@ -36,6 +31,13 @@
                         <li class="nav-item">
                             <a class="nav-link" href="{{url('/') }}">{{ __('Home') }}</a>
                         </li>
+
+                        @auth
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('admin.projects.index')}}">{{ __('All projects') }}</a>
+                        </li>
+                        @else
+                        @endauth
                     </ul>
 
                     <!-- Right Side Of Navbar -->
