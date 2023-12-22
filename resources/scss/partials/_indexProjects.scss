@@ -6,12 +6,29 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        position: relative;
 
         &__header {
 
             & .title {
                 font-size: 1.3rem;
             }
+        }
+
+        &__delete {
+            $circleWidth: 20px;
+            position: absolute;
+            left: - calc($circleWidth / 2);
+            top: - calc($circleWidth / 2);
+            background-color: $red;
+            color: $white;
+            font-size: 13px;
+            width: $circleWidth;
+            aspect-ratio: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
         }
     }
 
