@@ -1,5 +1,9 @@
 .section.projects {
 
+    #show-tools {
+        cursor: pointer;
+    }
+
     .project-card {
         background-color: $grey;
         height: 100%;
@@ -15,21 +19,40 @@
             }
         }
 
-        &__delete {
-            $circleWidth: 20px;
+        .tools {
+            width: 100%;
             position: absolute;
-            left: - calc($circleWidth / 2);
-            top: - calc($circleWidth / 2);
-            background-color: $red;
-            color: $white;
-            font-size: 13px;
-            width: $circleWidth;
-            aspect-ratio: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 50%;
+            top: 0;
+            left: 0;
+
+            & > .tool {
+                animation-name: movingTools;
+                animation-iteration-count: infinite;
+                animation-duration: 1s;
+                animation-delay: 0.4ms;
+            }
         }
     }
 
+    .hide {
+        display: none;
+    }
+}
+
+@keyframes movingTools {
+    0% {
+        transform: rotate(0);
+    }
+
+    33% {
+        transform: rotate(-6deg);
+    }
+
+    66% {
+        transform: rotate(6deg);
+    }
+
+    100% {
+        transform: rotate(0);
+    }
 }

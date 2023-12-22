@@ -6,7 +6,8 @@
 
 <section class="section projects py-5">
     <div class="container">
-        <h1 class="main-title text-center mb-5">Discover the projects that I made</h1>
+        <h1 class="main-title text-center mb-3">Discover the projects that I made</h1>
+        <div class="us-none btn btn-sm btn-warning mb-3 text-light fw-bold" id="show-tools">Toggle actions</div>
         <div class="row row-gap-3">
             @foreach ($projects as $project)
 
@@ -17,11 +18,16 @@
                             <h3 class="title"> {{$project->title}} </h3>
                         </div>
                         <div class="project-card__body text-center">
-                            <img class="mx-auto" src="{{$project->image}}" alt="project image">
-                            <div class="tools d-flex justify-content-between px-3">
-                                <a href="{{route('admin.projects.show', $project->id)}}">more</a>
-                                <a href="{{route('admin.projects.edit', $project->id)}}">edit</a>
-                            </div>
+                            <img class="mx-auto mb-3" src="{{$project->image}}" alt="project image">
+                            <a class="btn btn-sm btn-primary" href="{{route('admin.projects.show', $project->id)}}">more</a>
+                        </div>
+                        <div class="tools d-flex justify-content-between">
+                            <a class="btn btn-sm btn-success tool hide" href="{{route('admin.projects.edit', $project->id)}}">edit</a>
+                            <form class="tool hide" action="{{route('admin.projects.destroy', $project->id)}}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <input class="btn btn-sm btn-danger" type="submit" value="Delete">
+                            </form>
                         </div>
                     </div>
                 </div>
