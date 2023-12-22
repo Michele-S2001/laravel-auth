@@ -18,7 +18,10 @@
                         </div>
                         <div class="project-card__body text-center">
                             <img class="mx-auto" src="{{$project->image}}" alt="project image">
-                            <a href="{{route('admin.projects.show', $project)}}">more</a>
+                            <div class="tools d-flex justify-content-between px-3">
+                                <a href="{{route('admin.projects.show', $project->id)}}">more</a>
+                                <a href="{{route('admin.projects.edit', $project->id)}}">edit</a>
+                            </div>
                         </div>
                     </div>
                 </div>
