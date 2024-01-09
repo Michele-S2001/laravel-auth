@@ -39,6 +39,22 @@
     }
 }
 
+.c-modal {
+    &.show {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    display: none;
+    position: fixed;
+    inset: 0;
+
+    &__inner {
+        backdrop-filter: blur(10px);
+        border: 2px solid $black;
+    }
+}
+
 @keyframes movingTools {
     0% {
         transform: rotate(0);

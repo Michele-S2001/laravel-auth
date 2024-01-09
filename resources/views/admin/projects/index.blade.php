@@ -23,10 +23,10 @@
                         </div>
                         <div class="tools d-flex justify-content-between">
                             <a class="btn btn-sm btn-success tool hide" href="{{route('admin.projects.edit', $project->id)}}">edit</a>
-                            <form class="tool hide" action="{{route('admin.projects.destroy', $project->id)}}" method="POST">
+                            <form class="tool hide" id="{{'form-'.$project->id}}" action="{{route('admin.projects.destroy', $project->id)}}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <input class="btn btn-sm btn-danger" type="submit" value="Delete">
+                                <input class="btn btn-sm btn-danger" type="submit" value="Delete" data-delete data-target={{'#form-'.$project->id}}>
                             </form>
                         </div>
                     </div>
@@ -36,5 +36,13 @@
         </div>
     </div>
 </section>
+
+<div class="c-modal text-center">
+    <div class="c-modal__inner p-4">
+        <h5 class="mb-4">are you sure you want to delete this item?</h5>
+        <button id="destroy" class="btn btn-danger">Yes, delete this </button>
+        <button id="undo" class="btn btn-secondary">No, I changed my mind</button>
+    </div>
+</div>
 
 @endsection
